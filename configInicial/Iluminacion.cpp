@@ -381,6 +381,7 @@ void MouseCallback(GLFWwindow* window, double xPos, double yPos)
 
     GLfloat xOffset = xPos - lastX;
     GLfloat yOffset = lastY - yPos;  // Reversed since y-coordinates go from bottom to left
+<<<<<<< HEAD
 
     lastX = xPos;
     lastY = yPos;
@@ -389,3 +390,11 @@ void MouseCallback(GLFWwindow* window, double xPos, double yPos)
 }
 
 
+=======
+
+    lastX = xPos;
+    lastY = yPos;
+
+    camera.ProcessMouseMovement(xOffset, yOffset);
+}
+>>>>>>> practica_iluminacion2
