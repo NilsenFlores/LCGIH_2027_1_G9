@@ -24,6 +24,7 @@ float movX=0.0f; //nuevas variables
 float movY=0.0f;
 float movZ=-5.0f;
 float rot = 0.0f; //para rotacion
+
 float x = 0.0f;
 float y = 0.0f;
 float z= 0.0f;
@@ -206,7 +207,7 @@ int main() {
 		glUniformMatrix4fv(modelLoc, 1, GL_FALSE, glm::value_ptr(model));
 		glDrawArrays(GL_TRIANGLES, 0, 36);
 
-
+		//patas
 		model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(-0.7f, -0.18f, 0.5f));
 		model = glm::scale(model, glm::vec3(0.1f, 0.4f, 0.1f));
@@ -242,6 +243,7 @@ int main() {
 		glfwSwapBuffers(window);
 	
 	}
+
 	glDeleteVertexArrays(1, &VAO);
 	glDeleteBuffers(1, &VBO);
 
@@ -266,15 +268,15 @@ int main() {
 	 if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS)
 		 movZ += 0.008f;
 	 if (glfwGetKey(window, GLFW_KEY_RIGHT) == GLFW_PRESS){
-		 x = 1.0f;
-		 y = 0.0f;
+		 x = 0.0f;
+		 y = 1.0f;
 		 z = 0.0f;
 		 rot += 0.4f;
 	 }
 		 
 	 if (glfwGetKey(window, GLFW_KEY_LEFT) == GLFW_PRESS) {
-		 x = 1.0f;
-		 y = 0.0f;
+		 x = 0.0f;
+		 y = 1.0f;
 		 z = 0.0f;
 		 rot -= 0.4f;
 	 }
@@ -292,17 +294,16 @@ int main() {
 		 y = 0.0f;
 		 z = 1.0f;
 	 }
-	 if (glfwGetKey(window, GLFW_KEY_Y) == GLFW_PRESS) {
+	 if (glfwGetKey(window, GLFW_KEY_X) == GLFW_PRESS) {
 		 rot += 0.4f;
-		 x = 0.0f;
-		 y = 1.0f;
+		 x = 1.0f;
+		 y = 0.0f;
 		 z = 0.0f;
 	 }
-		
-	 if (glfwGetKey(window, GLFW_KEY_T) == GLFW_PRESS) {
+	 if (glfwGetKey(window, GLFW_KEY_C) == GLFW_PRESS) {
 		 rot -= 0.4f;
-		 x = 0.0f;
-		 y = 1.0f;
+		 x = 1.0f;
+		 y = 0.0f;
 		 z = 0.0f;
 	 }
 
@@ -345,5 +346,7 @@ int main() {
 		 std::cout << "";
 	 }
  }
+
+
 
 
